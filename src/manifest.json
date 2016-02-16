@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Design Tools",
+  "description": "[DESCRIPTION]",
+  "version": "1.0",
+  "background": {
+    "persistent": false,
+    "scripts": ["index.js"]
+  },
+  "browser_action": {
+    "default_icon": "assets/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Toggle Griiid"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
