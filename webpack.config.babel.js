@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const config = {
   entry: [
@@ -22,7 +21,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader')
+        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader'
       }
     ]
   },
@@ -32,13 +31,16 @@ const config = {
       template: path.resolve(__dirname, './src/views/index.html'),
       inject: true
     }),
-    new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('index.css')
+    new webpack.NoErrorsPlugin()
   ],
-  sassLoader: {
-    includePaths: [
-      path.resolve(__dirname, './src')
-    ]
+  postcss: () => {
+    return [
+      require('postcss-import')({ addDependencyTo: webpack }),
+      require('postcss-url')(),
+      require('postcss-cssnext')(),
+      require('postcss-browser-reporter')(),
+      require('postcss-reporter')()
+    ];
   }
 };
 
