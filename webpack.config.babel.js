@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const config = {
@@ -10,7 +11,7 @@ const config = {
   ],
   output: {
     path: __dirname + '/dist',
-    filename: 'index.js'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -20,17 +21,24 @@ const config = {
         loader: 'babel'
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]')
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader')
       }
     ]
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'griiid',
+      template: path.resolve(__dirname, './src/views/index.html'),
+      inject: true
+    }),
     new webpack.NoErrorsPlugin(),
     new ExtractTextPlugin('index.css')
   ],
   sassLoader: {
-    includePaths: [path.resolve(__dirname, './src')]
+    includePaths: [
+      path.resolve(__dirname, './src')
+    ]
   }
 };
 

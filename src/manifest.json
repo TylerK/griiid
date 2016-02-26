@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Design Tools",
-  "description": "[DESCRIPTION]",
+  "description": "Helpful tools for layout",
   "version": "1.0",
   "background": {
     "persistent": false,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom';
 import cssModules from 'react-css-modules';
-import styles from './styles/index.scss';
+import styles from './styles/index.css';
 
 @cssModules(styles)
 export default class App extends Component {
@@ -10,3 +11,5 @@ export default class App extends Component {
     );
   }
 }
+
+render(<App />, document.getElementById('griiid'));
