@@ -21,7 +21,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader'
+        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[name]___[hash:base64:8]!postcss-loader'
       }
     ]
   },
@@ -29,9 +29,15 @@ const config = {
     new HtmlWebpackPlugin({
       title: 'griiid',
       template: path.resolve(__dirname, './src/views/index.html'),
-      inject: true
+      inject: false
     }),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      'React': 'react',
+      '_': 'lodash',
+      'ReactDOM': 'react-dom',
+      'cssModules': 'react-css-modules'
+    })
   ],
   postcss: () => {
     return [
@@ -41,6 +47,10 @@ const config = {
       require('postcss-browser-reporter')(),
       require('postcss-reporter')()
     ];
+  },
+  resolve: {
+    modulesDirectories: ['node_modules', './src'],
+    extensions: ['', '.js', '.jsx']
   }
 };
 

@@ -30,6 +30,7 @@
     "eslint-plugin-react": "^3.16.1",
     "extract-text-webpack-plugin": "^0.8.2",
     "html-webpack-plugin": "^2.9.0",
+    "lodash": "^4.5.1",
     "postcss": "^5.0.16",
     "postcss-browser-reporter": "^0.4.0",
     "postcss-cssnext": "^2.4.0",
