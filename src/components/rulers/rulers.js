@@ -1,4 +1,4 @@
-import styles from './rulers.css';
+import styles from './rulers.styles.css';
 
 cssModules(styles);
 export default class Rulers extends React.Component {
