@@ -1,2 +1,7 @@
 import { createSelector } from 'reselect';
-export const RulersSelector = createSelector(state => state.rulers);
+
+const rulersPlacementSelector = state => state.rulers;
+export const RulersSelector = createSelector(
+  rulersPlacementSelector,
+  rulers => rulers
+);
