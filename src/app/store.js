@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import { RulersReducers } from 'components/rulers';
+import { reducers as RulersReducers } from 'components/rulers';
 
 const reducers = combineReducers({
   rulers: RulersReducers

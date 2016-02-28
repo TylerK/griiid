@@ -21,7 +21,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[name]___[hash:base64:8]!postcss-loader'
+        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:8]!postcss-loader'
       }
     ]
   },
@@ -41,7 +41,10 @@ const config = {
   ],
   postcss: () => {
     return [
-      require('postcss-import')({ addDependencyTo: webpack }),
+      require('postcss-import')({
+        path: path.join(__dirname, './src'),
+        addDependencyTo: webpack
+      }),
       require('postcss-url')(),
       require('postcss-cssnext')(),
       require('postcss-browser-reporter')(),

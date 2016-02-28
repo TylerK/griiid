@@ -1,5 +1,124 @@
-.rulers {
+@import 'styles/colors.css';
+
+/**
+ * --------------------------------------------------------
+ * General ruler styles
+ * --------------------------------------------------------
+ */
+:root {
+  --size: 3rem;
+}
+.rulers-wrapper {
   position: fixed;
   width: 100%;
   height: 100%;
 }
+.rulers--stage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: var(--size);
+  left: var(--size);
+}
+
+/**
+ * --------------------------------------------------------
+ * Ruler component wrappers
+ * --------------------------------------------------------
+ */
+.ruler--dual-axis,
+.ruler--horizontal,
+.ruler--vertical {
+  position: fixed;
+  background: #fff;
+  z-index: 1;
+}
+.ruler--dual-axis {
+  width: var(--size);
+  height: var(--size);
+  border-bottom: 1px solid var(--grey100);
+  border-right: 1px solid var(--grey100);
+  z-index: 2;
+}
+.ruler--horizontal {
+  width: 100%;
+  height: var(--size);
+  left: var(--size);
+  border-bottom: 1px solid var(--grey100);
+}
+.ruler--vertical {
+  width: var(--size);
+  height: 100%;
+  top: var(--size);
+  border-right: 1px solid var(--grey100);
+}
+
+/**
+ * --------------------------------------------------------
+ * Ruler markers and text
+ * --------------------------------------------------------
+ */
+.markers-block--horizontal,
+.markers-block--vertical {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.markers-block--title {
+  color: var(--grey500);
+}
+.marker {
+  background: var(--grey100);
+  position: absolute;
+}
+
+/**
+ * Horizontal styles
+ */
+.markers-block--horizontal .marker {
+  width: 1px;
+  height: .5rem;
+  bottom: 0;
+}
+.markers-block--horizontal .marker:nth-child(2n) {
+  height: 1rem;
+}
+.markers-block--horizontal .marker:first-child {
+  height: 100%;
+}
+.markers-block--horizontal .title {
+  position: absolute;
+  left: 1rem;
+  top: 0.25rem;
+  width: 100%;
+}
+
+/**
+ * Vertical styles
+ */
+.markers-block--vertical .marker {
+  height: 1px;
+  width: .5rem;
+  right: 0;
+}
+.markers-block--vertical .marker:nth-child(2n) {
+  width: 1rem;
+}
+.markers-block--vertical .marker:first-child {
+  width: 100%;
+}
+.markers-block--vertical .title {
+  position: absolute;
+  word-break: break-all;
+  width: 1rem;
+  height: 100%;
+  left: 0.25rem;
+  top: 1rem;
+}
+
+/**
+ * --------------------------------------------------------
+ * Dragged out ruler lines
+ * --------------------------------------------------------
+ */
+

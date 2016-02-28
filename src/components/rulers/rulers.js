@@ -1,3 +1,6 @@
+import styles from './rulers.styles.css';
+
+@cssModules(styles)
 export default class Rulers extends React.Component {
   static propTypes = {
     rulers: React.PropTypes.array
@@ -16,7 +19,7 @@ export default class Rulers extends React.Component {
 
   render() {
     return (
-      <div styleName="rulers-stage">
+      <div styleName="rulers--stage">
         { this.renderRulers() }
       </div>
     );
