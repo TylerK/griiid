@@ -8,5 +8,18 @@
     "add-module-exports",
     "transform-decorators-legacy",
     "transform-runtime"
-  ]
+  ],
+  "env": {
+    "development": {
+      "plugins": [["react-transform", {
+        "transforms": [{
+          "transform": "react-transform-catch-errors",
+          "imports": [
+            "react",
+            "redbox-react"
+          ]
+        }]
+      }]]
+    }
+  }
 }
