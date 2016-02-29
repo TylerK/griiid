@@ -3,6 +3,8 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config = {
+  debug: true,
+  devtool: 'eval',
   entry: [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',

@@ -32,6 +32,8 @@
   position: fixed;
   background: #fff;
   z-index: 1;
+  user-select: none;
+  cursor: default;
 }
 .ruler--dual-axis {
   width: var(--size);
@@ -121,4 +123,35 @@
  * Dragged out ruler lines
  * --------------------------------------------------------
  */
+.ruler-line--horizontal,
+.ruler-line--vertical {
+  position: absolute;
 
+  &:after {
+    content: ' ';
+    position: absolute;
+    background: #00deff;
+  }
+}
+.ruler-line--horizontal {
+  height: 3px;
+  width: 100%;
+  cursor: row-resize;
+
+  &:after {
+    width: 100%;
+    height: 1px;
+    top: 1px;
+  }
+}
+.ruler-line--vertical {
+  height: 100%;
+  width: 3px;
+  cursor: col-resize;
+
+  &:after {
+    width: 1px;
+    height: 100%;
+    left: 1px;
+  }
+}

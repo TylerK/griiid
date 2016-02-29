@@ -1,5 +1,4 @@
 export { default as actions } from './rulers.actions';
-export { default as config } from './rulers.config';
 export { default as reducers } from './rulers.reducers';
 
 export { default as Rulers } from './rulers';

@@ -2,6 +2,10 @@ import styles from './rulers.styles.css';
 
 @cssModules(styles)
 export default class RulersVertical extends React.Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+
   renderMarkers() {
     const windowHeight = window.innerWidth;
     const markerBlockHeight = 100;
@@ -9,10 +13,10 @@ export default class RulersVertical extends React.Component {
     const Markers = [];
 
     for (let i = 0; i <= markerBlocks; i++) {
-      let height = Math.floor(i * markerBlockHeight);
+      const height = Math.floor(i * markerBlockHeight);
 
       Markers.push(
-        <div styleName="markers-block--vertical" style={{ height: markerBlockHeight, top: height }}>
+        <div key={i} styleName="markers-block--vertical" style={{ height: markerBlockHeight, top: height }}>
           <div styleName="title">{height}</div>
           <div>
             <div styleName="marker" style={{ top: '0px' }} />

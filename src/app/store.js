@@ -1,10 +1,27 @@
-import { createStore, combineReducers } from 'redux';
+import {
+  applyMiddleware,
+  createStore,
+  combineReducers,
+  compose
+} from 'redux';
+
 import { reducers as RulersReducers } from 'components/rulers';
+import createLogger from 'redux-logger';
+import thunk from 'redux-thunk';
 
 const reducers = combineReducers({
   rulers: RulersReducers
 });
 
-export default createStore(reducers);
+const logger = createLogger({
+  level: 'log',
+  duration: false,
+  timestamp: true,
+  logErrors: true
+});
+
+const middlewares = [thunk, logger];
+
+export default compose(applyMiddleware(...middlewares))(createStore)(reducers);
 
 

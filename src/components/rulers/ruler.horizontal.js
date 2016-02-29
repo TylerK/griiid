@@ -2,6 +2,10 @@ import styles from './rulers.styles.css';
 
 @cssModules(styles)
 export default class RulersHorizontal extends React.Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+
   renderMarkers() {
     const windowWidth = window.innerWidth;
     const markerBlockWidth = 100;
@@ -9,10 +13,10 @@ export default class RulersHorizontal extends React.Component {
     const Markers = [];
 
     for (let i = 0; i <= markerBlocks; i++) {
-      let width = Math.floor(i * markerBlockWidth);
+      const width = Math.floor(i * markerBlockWidth);
 
       Markers.push(
-        <div styleName="markers-block--horizontal" style={{ width: markerBlockWidth, left: width }}>
+        <div key={i} styleName="markers-block--horizontal" style={{ width: markerBlockWidth, left: width }}>
           <div styleName="title">{width}</div>
           <div>
             <div styleName="marker" style={{ left: '0px' }} />
