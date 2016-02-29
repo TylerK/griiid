@@ -1,3 +1,4 @@
+import { RulerMarkerBlock } from 'components/rulers';
 import styles from './rulers.styles.css';
 
 @cssModules(styles)
@@ -35,26 +36,8 @@ export default class RulersVertical extends React.Component {
     const markers = [];
 
     for (let i = 0; i <= markerBlocks; i++) {
-      const height = Math.floor(i * markerBlockHeight);
-
-      markers.push(
-        <div key={i} styleName="markers-block--vertical" style={{ height: markerBlockHeight, top: height }}>
-          <div styleName="title">{height}</div>
-          <div>
-            <div styleName="marker" style={{ top: '0px' }} />
-            <div styleName="marker" style={{ top: '10px' }} />
-            <div styleName="marker" style={{ top: '20px' }} />
-            <div styleName="marker" style={{ top: '30px' }} />
-            <div styleName="marker" style={{ top: '40px' }} />
-            <div styleName="marker" style={{ top: '50px' }} />
-            <div styleName="marker" style={{ top: '60px' }} />
-            <div styleName="marker" style={{ top: '70px' }} />
-            <div styleName="marker" style={{ top: '80px' }} />
-            <div styleName="marker" style={{ top: '90px' }} />
-            <div styleName="marker" style={{ top: '100px' }} />
-          </div>
-        </div>
-      );
+      const offset = i * 100;
+      markers.push(<RulerMarkerBlock key={i} offset={offset} orientation="vertical" />);
     }
 
     return markers;

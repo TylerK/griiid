@@ -1,3 +1,4 @@
+import { RulerMarkerBlock } from 'components/rulers';
 import styles from './rulers.styles.css';
 
 @cssModules(styles)
@@ -35,26 +36,8 @@ export default class RulersHorizontal extends React.Component {
     const markers = [];
 
     for (let i = 0; i <= markerBlocks; i++) {
-      const width = Math.floor(i * markerBlockWidth);
-
-      markers.push(
-        <div key={i} styleName="markers-block--horizontal" style={{ width: markerBlockWidth, left: width }}>
-          <div styleName="title">{width}</div>
-          <div>
-            <div styleName="marker" style={{ left: '0px' }} />
-            <div styleName="marker" style={{ left: '10px' }} />
-            <div styleName="marker" style={{ left: '20px' }} />
-            <div styleName="marker" style={{ left: '30px' }} />
-            <div styleName="marker" style={{ left: '40px' }} />
-            <div styleName="marker" style={{ left: '50px' }} />
-            <div styleName="marker" style={{ left: '60px' }} />
-            <div styleName="marker" style={{ left: '70px' }} />
-            <div styleName="marker" style={{ left: '80px' }} />
-            <div styleName="marker" style={{ left: '90px' }} />
-            <div styleName="marker" style={{ left: '100px' }} />
-          </div>
-        </div>
-      );
+      const offset = i * 100;
+      markers.push(<RulerMarkerBlock key={i} offset={offset} orientation="horizontal" />);
     }
 
     return markers;
