@@ -2,20 +2,42 @@ import styles from './rulers.styles.css';
 
 @cssModules(styles)
 export default class RulersVertical extends React.Component {
-  shouldComponentUpdate() {
-    return false;
+  state = {
+    height: 0
+  }
+
+  componentWillMount() {
+    this._handleResize();
+  }
+
+  componentDidMount() {
+    document.addEventListener('resize', this._handleResize);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.height !== nextState.height;
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('resize', this._handleResize);
+  }
+
+  _handleResize = () => {
+    this.setState({
+      height: window.innerWidth
+    });
   }
 
   renderMarkers() {
-    const windowHeight = window.innerWidth;
+    const height = this.state.height;
     const markerBlockHeight = 100;
-    const markerBlocks = windowHeight / markerBlockHeight;
-    const Markers = [];
+    const markerBlocks = height / markerBlockHeight;
+    const markers = [];
 
     for (let i = 0; i <= markerBlocks; i++) {
       const height = Math.floor(i * markerBlockHeight);
 
-      Markers.push(
+      markers.push(
         <div key={i} styleName="markers-block--vertical" style={{ height: markerBlockHeight, top: height }}>
           <div styleName="title">{height}</div>
           <div>
@@ -35,9 +57,10 @@ export default class RulersVertical extends React.Component {
       );
     }
 
-    return Markers;
+    return markers;
   }
   render() {
+    console.log(this.state.height);
     return (
       <div styleName="ruler--vertical">
         { this.renderMarkers() }

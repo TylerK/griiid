@@ -10,7 +10,7 @@ export const dragRuler = (id, orientation, location) => {
     payload: {
       id,
       orientation,
-      location
+      location: (location - 1) // Account for lines actually being 3 pixels in thickness
     }
   };
 };
@@ -22,7 +22,7 @@ export const createRuler = (orientation, location) => {
     payload: {
       id: id.value,
       orientation,
-      location
+      location: (location - 1) // Account for lines actually being 3 pixels in thickness
     }
   };
 };

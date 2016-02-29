@@ -9,8 +9,17 @@ class RulersContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(createRuler('vertical', 133));
-    this.props.dispatch(createRuler('horizontal', 76));
+    this.props.dispatch(createRuler('vertical', 30));
+    this.props.dispatch(createRuler('vertical', 60));
+    this.props.dispatch(createRuler('vertical', 90));
+    this.props.dispatch(createRuler('vertical', 120));
+    this.props.dispatch(createRuler('vertical', 150));
+
+    this.props.dispatch(createRuler('horizontal', 30));
+    this.props.dispatch(createRuler('horizontal', 60));
+    this.props.dispatch(createRuler('horizontal', 90));
+    this.props.dispatch(createRuler('horizontal', 120));
+    this.props.dispatch(createRuler('horizontal', 150));
   }
 
   render() {

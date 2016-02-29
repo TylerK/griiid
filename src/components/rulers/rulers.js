@@ -53,11 +53,10 @@ export default class Rulers extends React.Component {
   }
 
   render() {
-    let dragDirection;
     let iconStyle = {};
 
     if (this.state.dragging) {
-      dragDirection = this.state.dragging.orientation === 'horizontal';
+      const dragDirection = this.state.dragging.orientation === 'horizontal';
       iconStyle = {
         cursor: dragDirection ? 'row-resize' : 'col-resize'
       };

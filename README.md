@@ -9,6 +9,7 @@ griiid is an effort to bring InDesign style layout tools to Chrome.
 * [ ] Baseline grid generation
 * [ ] Framework aware responsive grid generation (Bootstrap, Foundation, etc)
 * [ ] Configurable color and grid settings
+* [ ] Smart guide snapping
 
 # How to install
 TODO: Wrap this up into a Chrome Extension.
