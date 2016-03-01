@@ -1,21 +1,21 @@
 import {
-  Rulers,
+  GuideLines,
   HorizontalRuler,
   VerticalRuler,
   DualAxisRuler
 } from 'components/rulers';
 
-import styles from './rulers.styles.css';
+import styles from './styles.css';
 
 @cssModules(styles)
 export default class RulersWrapper extends React.Component {
   render() {
     return (
-      <div styleName="rulers-wrapper">
+      <div styleName="rulers-layout">
         <DualAxisRuler {...this.props} />
         <HorizontalRuler {...this.props} />
         <VerticalRuler {...this.props} />
-        <Rulers {...this.props} />
+        <GuideLines {...this.props} />
       </div>
     );
   }

@@ -1,7 +1,7 @@
-import styles from './rulers.styles.css';
+import styles from './styles.css';
 
 @cssModules(styles)
-export default class RulerMarkerBlock extends React.Component {
+export default class MarkerBlockPX extends React.Component {
   static propTypes = {
     offset: React.PropTypes.number,
     orientation: React.PropTypes.string
@@ -16,7 +16,7 @@ export default class RulerMarkerBlock extends React.Component {
       ? { left: `${i * 10}px` }
       : { top: `${i * 10}px` };
 
-      markers.push(<div styleName="marker" style={markerStyles} />);
+      markers.push(<div key={i} styleName="marker" style={markerStyles} />);
     }
 
     const wrapperStyles = orientation === 'horizontal'

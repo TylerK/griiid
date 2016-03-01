@@ -1,7 +1,7 @@
-import styles from './rulers.styles.css';
+import styles from './styles.css';
 
 @cssModules(styles)
-export default class RulerLine extends React.Component {
+export default class GuideLine extends React.Component {
   static propTypes = {
     onMouseDown: React.PropTypes.func,
     onMouseUp: React.PropTypes.func,

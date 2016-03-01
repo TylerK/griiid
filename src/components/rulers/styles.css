@@ -8,7 +8,7 @@
 :root {
   --size: 3rem;
 }
-.rulers-wrapper {
+.rulers-layout {
   position: fixed;
   width: 100%;
   height: 100%;

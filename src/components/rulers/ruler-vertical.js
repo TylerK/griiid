@@ -1,5 +1,5 @@
-import { RulerMarkerBlock } from 'components/rulers';
-import styles from './rulers.styles.css';
+import { MarkerBlockPX } from 'components/rulers';
+import styles from './styles.css';
 
 @cssModules(styles)
 export default class RulersVertical extends React.Component {
@@ -37,7 +37,7 @@ export default class RulersVertical extends React.Component {
 
     for (let i = 0; i <= markerBlocks; i++) {
       const offset = i * 100;
-      markers.push(<RulerMarkerBlock key={i} offset={offset} orientation="vertical" />);
+      markers.push(<MarkerBlockPX key={i} offset={offset} orientation="vertical" />);
     }
 
     return markers;

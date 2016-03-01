@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { RulersWrapper } from 'components/rulers';
+import { Wrapper } from 'components/rulers';
 import { RulersSelector } from 'app/selectors';
-import { createRuler } from './rulers.actions';
+import { createRuler } from './actions';
 
 class RulersContainer extends React.Component {
   static propTypes = {
@@ -24,7 +24,7 @@ class RulersContainer extends React.Component {
 
   render() {
     return (
-      <RulersWrapper {...this.props} />
+      <Wrapper {...this.props} />
     );
   }
 }

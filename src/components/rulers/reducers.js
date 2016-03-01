@@ -2,7 +2,7 @@ import {
   CREATE_RULER,
   DELETE_RULER,
   DRAG_RULER
-} from './rulers.actions';
+} from './actions';
 
 const initialState = {
   rulers: []

@@ -1,11 +1,13 @@
-export { default as actions } from './rulers.actions';
-export { default as reducers } from './rulers.reducers';
+// Redux
+export { default as actions } from './actions';
+export { default as reducers } from './reducers';
 
-export { default as Rulers } from './rulers';
-export { default as RulersWrapper } from './rulers.wrapper';
-export { default as RulersContainer } from './rulers.container';
-export { default as RulerLine } from './ruler.line';
-export { default as RulerMarkerBlock } from './ruler.marker-block';
-export { default as HorizontalRuler } from './ruler.horizontal';
-export { default as VerticalRuler } from './ruler.vertical';
-export { default as DualAxisRuler } from './ruler.dual-axis';
+// React
+export { default as GuideLines } from './guide-lines';
+export { default as GuideLine } from './guide-line';
+export { default as Wrapper } from './wrapper';
+export { default as Container } from './container';
+export { default as MarkerBlockPX } from './marker-block-px';
+export { default as HorizontalRuler } from './ruler-horizontal';
+export { default as VerticalRuler } from './ruler-vertical';
+export { default as DualAxisRuler } from './ruler-dual-axis';

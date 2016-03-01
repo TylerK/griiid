@@ -1,9 +1,9 @@
-import { dragRuler } from './rulers.actions';
-import { RulerLine } from 'components/rulers';
-import styles from './rulers.styles.css';
+import { dragRuler } from './actions';
+import { GuideLine } from 'components/rulers';
+import styles from './styles.css';
 
 @cssModules(styles)
-export default class Rulers extends React.Component {
+export default class GuideLines extends React.Component {
   static propTypes = {
     dispatch: React.PropTypes.func,
     rulers: React.PropTypes.array
@@ -40,7 +40,7 @@ export default class Rulers extends React.Component {
     if (rulers) {
       return rulers.map(ruler => {
         return (
-          <RulerLine
+          <GuideLine
             key={ruler.id}
             dispatch={dispatch}
             ruler={ruler}
