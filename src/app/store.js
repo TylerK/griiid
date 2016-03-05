@@ -5,12 +5,13 @@ import {
   compose
 } from 'redux';
 
-import { reducers as RulersReducers } from 'components/rulers';
+import { reducers as GuideLinesReducers } from 'components/guidelines';
+
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 const reducers = combineReducers({
-  rulers: RulersReducers
+  guideLines: GuideLinesReducers
 });
 
 const logger = createLogger({

@@ -1,24 +1,15 @@
 @import 'styles/colors.css';
+@import 'styles/config.css';
 
 /**
  * --------------------------------------------------------
  * General ruler styles
  * --------------------------------------------------------
  */
-:root {
-  --size: 3rem;
-}
 .rulers-layout {
   position: fixed;
   width: 100%;
   height: 100%;
-}
-.rulers--stage {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: var(--size);
-  left: var(--size);
 }
 
 /**
@@ -36,22 +27,22 @@
   cursor: default;
 }
 .ruler--dual-axis {
-  width: var(--size);
-  height: var(--size);
+  width: var(--rulerSize);
+  height: var(--rulerSize);
   border-bottom: 1px solid var(--grey100);
   border-right: 1px solid var(--grey100);
   z-index: 2;
 }
 .ruler--horizontal {
   width: 100%;
-  height: var(--size);
-  left: var(--size);
+  height: var(--rulerSize);
+  left: var(--rulerSize);
   border-bottom: 1px solid var(--grey100);
 }
 .ruler--vertical {
-  width: var(--size);
+  width: var(--rulerSize);
   height: 100%;
-  top: var(--size);
+  top: var(--rulerSize);
   border-right: 1px solid var(--grey100);
 }
 
@@ -116,42 +107,4 @@
   height: 100%;
   left: 0.25rem;
   top: 1rem;
-}
-
-/**
- * --------------------------------------------------------
- * Dragged out ruler lines
- * --------------------------------------------------------
- */
-.ruler-line--horizontal,
-.ruler-line--vertical {
-  position: absolute;
-
-  &:after {
-    content: ' ';
-    position: absolute;
-    background: #00deff;
-  }
-}
-.ruler-line--horizontal {
-  height: 3px;
-  width: 100%;
-  cursor: row-resize;
-
-  &:after {
-    width: 100%;
-    height: 1px;
-    top: 1px;
-  }
-}
-.ruler-line--vertical {
-  height: 100%;
-  width: 3px;
-  cursor: col-resize;
-
-  &:after {
-    width: 1px;
-    height: 100%;
-    left: 1px;
-  }
 }

@@ -1,12 +1,12 @@
 import { dragGuideLine } from './actions';
-import { GuideLine } from 'components/rulers';
+import { GuideLine } from 'components/guidelines';
 import styles from './styles.css';
 
 @cssModules(styles)
 export default class GuideLines extends React.Component {
   static propTypes = {
     dispatch: React.PropTypes.func,
-    rulers: React.PropTypes.array
+    guideLines: React.PropTypes.array
   }
 
   state = {
@@ -35,10 +35,10 @@ export default class GuideLines extends React.Component {
   }
 
   renderRulers() {
-    const { dispatch, rulers } = this.props;
+    const { dispatch, guideLines } = this.props;
 
-    if (rulers) {
-      return rulers.map(ruler => {
+    if (guideLines) {
+      return guideLines.map(ruler => {
         return (
           <GuideLine
             key={ruler.id}
@@ -63,7 +63,7 @@ export default class GuideLines extends React.Component {
     }
 
     return (
-      <div styleName="rulers--stage" style={iconStyle} onMouseMove={this._dragLine}>
+      <div styleName="guide-lines--stage" style={iconStyle} onMouseMove={this._dragLine}>
         { this.renderRulers() }
       </div>
     );

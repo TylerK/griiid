@@ -6,14 +6,14 @@ import {
 } from './actions';
 
 const initialState = {
-  rulers: []
+  guideLines: []
 };
 
 /**
  * Update an existing guideline's state
  */
 const dragGuideLine = (state, action) => Object.assign({}, state, {
-  rulers: state.rulers
+  guideLines: state.guideLines
     .filter(ruler => ruler.id !== action.payload.id)
     .concat({
       id: action.payload.id,
@@ -26,7 +26,7 @@ const dragGuideLine = (state, action) => Object.assign({}, state, {
  * Add a new guideline to state
  */
 const createGuideLine = (state, action) => Object.assign({}, state, {
-  rulers: state.rulers.concat({
+  guideLines: state.guideLines.concat({
     id: action.payload.id,
     location: action.payload.location,
     orientation: action.payload.orientation
@@ -37,7 +37,7 @@ const createGuideLine = (state, action) => Object.assign({}, state, {
  * Delete guideline from state.
  */
 const deleteGuideline = (state, action) => Object.assign({}, state, {
-  rulers: state.rulers.filter(ruler => ruler.id !== action.payload.id)
+  guideLines: state.guideLines.filter(ruler => ruler.id !== action.payload.id)
 });
 
 /**
@@ -56,4 +56,4 @@ export default function guidelinesReducer (state = initialState, action) {
     case CLEAR_GUIDELINES: return clearGuideLines(state);
     default: return state;
   }
-};
+}

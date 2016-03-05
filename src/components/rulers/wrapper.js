@@ -1,5 +1,4 @@
 import {
-  GuideLines,
   HorizontalRuler,
   VerticalRuler,
   DualAxisRuler
@@ -15,7 +14,6 @@ export default class RulersWrapper extends React.Component {
         <DualAxisRuler {...this.props} />
         <HorizontalRuler {...this.props} />
         <VerticalRuler {...this.props} />
-        <GuideLines {...this.props} />
       </div>
     );
   }

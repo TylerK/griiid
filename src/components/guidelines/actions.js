@@ -61,6 +61,6 @@ export const deleteGuideLines = (id) => {
  */
 export const clearGuideLines = () => {
   return {
-    type: CLEAR_RULERS
+    type: CLEAR_GUIDELINES
   };
 };

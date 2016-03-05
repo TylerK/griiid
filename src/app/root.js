@@ -1,9 +1,13 @@
-import { Container as RulersContainer } from 'components/rulers';
+import { Wrapper as RulersWrapper } from 'components/rulers';
+import { container as GuideLinesContainer } from 'components/guidelines';
 
 export default class Root extends React.Component {
   render() {
     return (
-      <RulersContainer />
+      <div className="root">
+        <RulersWrapper />
+        <GuideLinesContainer />
+      </div>
     );
   }
 }
