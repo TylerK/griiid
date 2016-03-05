@@ -31,8 +31,8 @@ export default class GuideLine extends React.Component {
         ref="draggable"
         onMouseDown={this._handleMouseDown}
         onMouseUp={this._handleMouseUp}
-        styleName={isHorizontal ? "guide-line--horizontal" : "guide-line--vertical"}
-        style={isHorizontal ? {top: ruler.location} : {left: ruler.location}}
+        styleName={isHorizontal ? 'guide-line--horizontal' : 'guide-line--vertical'}
+        style={isHorizontal ? { top: ruler.location } : { left: ruler.location }}
       />
     );
   }

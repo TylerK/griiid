@@ -1,9 +1,8 @@
-import uuid from 'uuid-lib';
-
 export const CLEAR_GUIDELINES = 'CLEAR_GUIDELINES';
 export const CREATE_GUIDELINE = 'CREATE_GUIDELINE';
 export const DELETE_GUIDELINE = 'DELETE_GUIDELINE';
 export const DRAG_GUIDELINE = 'DRAG_GUIDELINE';
+export const DROP_GUIDELINE = 'DROP_GUIDELINE';
 
 /**
  * Drag an existing guide line
@@ -12,9 +11,35 @@ export const DRAG_GUIDELINE = 'DRAG_GUIDELINE';
  * @param  {number} location
  * @return {object}
  */
-export const dragGuideLine = (id, orientation, location) => {
+export const dragGuideLine = (id, location) => {
   return {
     type: DRAG_GUIDELINE,
+    payload: {
+      id,
+      location: (location - 1) // Account for lines actually being 3 pixels in thickness
+    }
+  };
+};
+
+export const dropGuideLine = (id) => {
+  return {
+    type: DROP_GUIDELINE,
+    payload: {
+      id
+    }
+  };
+};
+
+/**
+ * Create a new guide line arbitrarily
+ * @param  {string} orientation 'horizontal' | 'vertical'
+ * @param  {number} location
+ * @param  {string} id Optional provided ID
+ * @return {object}
+ */
+export const createGuideLine = (orientation, location, id) => {
+  return {
+    type: CREATE_GUIDELINE,
     payload: {
       id,
       orientation,
@@ -24,29 +49,11 @@ export const dragGuideLine = (id, orientation, location) => {
 };
 
 /**
- * Create a new ruler arbitrarily
- * @param  {string} orientation 'horizontal' | 'vertical'
- * @param  {number} location
- * @return {object}
- */
-export const createGuideLine = (orientation, location) => {
-  const id = uuid.create();
-  return {
-    type: CREATE_GUIDELINE,
-    payload: {
-      id: id.value,
-      orientation,
-      location: (location - 1) // Account for lines actually being 3 pixels in thickness
-    }
-  };
-};
-
-/**
- * Delete a ruler by ID
+ * Delete a guide line by ID
  * @param  {string} id Ruler ID
  * @return {object}
  */
-export const deleteGuideLines = (id) => {
+export const deleteGuideLine = (id) => {
   return {
     type: DELETE_GUIDELINE,
     payload: {
@@ -56,7 +63,7 @@ export const deleteGuideLines = (id) => {
 };
 
 /**
- * Clear all rulers
+ * Clear all guide lines
  * @return {object}
  */
 export const clearGuideLines = () => {

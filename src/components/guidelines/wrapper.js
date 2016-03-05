@@ -8,9 +8,7 @@ import styles from './styles.css';
 export default class RulersWrapper extends React.Component {
   render() {
     return (
-      <div styleName="guide-lines--layout">
-        <GuideLines {...this.props} />
-      </div>
+      <GuideLines {...this.props} />
     );
   }
 }

@@ -5,8 +5,8 @@ export default class Root extends React.Component {
   render() {
     return (
       <div className="root">
-        <RulersWrapper />
         <GuideLinesContainer />
+        <RulersWrapper />
       </div>
     );
   }

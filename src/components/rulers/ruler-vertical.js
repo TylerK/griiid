@@ -43,7 +43,6 @@ export default class RulersVertical extends React.Component {
     return markers;
   }
   render() {
-    console.log(this.state.height);
     return (
       <div styleName="ruler--vertical">
         { this.renderMarkers() }
