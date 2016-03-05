@@ -1,4 +1,4 @@
-import { dragRuler } from './actions';
+import { dragGuideLine } from './actions';
 import { GuideLine } from 'components/rulers';
 import styles from './styles.css';
 
@@ -25,7 +25,7 @@ export default class GuideLines extends React.Component {
     const { id, orientation } = this.state.dragging;
     const location = orientation === 'horizontal' ? event.clientY : event.clientX;
 
-    this.props.dispatch(dragRuler(id, orientation, location - 30));
+    this.props.dispatch(dragGuideLine(id, orientation, location - 30));
   }
 
   _dragEnd = () => {

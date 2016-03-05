@@ -1,12 +1,20 @@
 import uuid from 'uuid-lib';
 
-export const CREATE_RULER = 'CREATE_RULER';
-export const DELETE_RULER = 'DELETE_RULER';
-export const DRAG_RULER = 'DRAG_RULER';
+export const CLEAR_GUIDELINES = 'CLEAR_GUIDELINES';
+export const CREATE_GUIDELINE = 'CREATE_GUIDELINE';
+export const DELETE_GUIDELINE = 'DELETE_GUIDELINE';
+export const DRAG_GUIDELINE = 'DRAG_GUIDELINE';
 
-export const dragRuler = (id, orientation, location) => {
+/**
+ * Drag an existing guide line
+ * @param  {string} id
+ * @param  {string} orientation 'horizontal' | 'vertical'
+ * @param  {number} location
+ * @return {object}
+ */
+export const dragGuideLine = (id, orientation, location) => {
   return {
-    type: DRAG_RULER,
+    type: DRAG_GUIDELINE,
     payload: {
       id,
       orientation,
@@ -15,10 +23,16 @@ export const dragRuler = (id, orientation, location) => {
   };
 };
 
-export const createRuler = (orientation, location) => {
+/**
+ * Create a new ruler arbitrarily
+ * @param  {string} orientation 'horizontal' | 'vertical'
+ * @param  {number} location
+ * @return {object}
+ */
+export const createGuideLine = (orientation, location) => {
   const id = uuid.create();
   return {
-    type: CREATE_RULER,
+    type: CREATE_GUIDELINE,
     payload: {
       id: id.value,
       orientation,
@@ -27,6 +41,26 @@ export const createRuler = (orientation, location) => {
   };
 };
 
-export const deleteRuler = () => {
-  return { type: DELETE_RULER };
+/**
+ * Delete a ruler by ID
+ * @param  {string} id Ruler ID
+ * @return {object}
+ */
+export const deleteGuideLines = (id) => {
+  return {
+    type: DELETE_GUIDELINE,
+    payload: {
+      id
+    }
+  };
+};
+
+/**
+ * Clear all rulers
+ * @return {object}
+ */
+export const clearGuideLines = () => {
+  return {
+    type: CLEAR_RULERS
+  };
 };

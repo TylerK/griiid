@@ -1,14 +1,18 @@
 import {
-  CREATE_RULER,
-  DELETE_RULER,
-  DRAG_RULER
+  CLEAR_GUIDELINES,
+  CREATE_GUIDELINE,
+  DELETE_GUIDELINE,
+  DRAG_GUIDELINE
 } from './actions';
 
 const initialState = {
   rulers: []
 };
 
-const dragRuler = (state, action) => Object.assign({}, state, {
+/**
+ * Update an existing guideline's state
+ */
+const dragGuideLine = (state, action) => Object.assign({}, state, {
   rulers: state.rulers
     .filter(ruler => ruler.id !== action.payload.id)
     .concat({
@@ -18,7 +22,10 @@ const dragRuler = (state, action) => Object.assign({}, state, {
     })
 });
 
-const createRuler = (state, action) => Object.assign({}, state, {
+/**
+ * Add a new guideline to state
+ */
+const createGuideLine = (state, action) => Object.assign({}, state, {
   rulers: state.rulers.concat({
     id: action.payload.id,
     location: action.payload.location,
@@ -26,15 +33,27 @@ const createRuler = (state, action) => Object.assign({}, state, {
   })
 });
 
-const deleteRuler = (state, action) => Object.assign({}, state, {
+/**
+ * Delete guideline from state.
+ */
+const deleteGuideline = (state, action) => Object.assign({}, state, {
   rulers: state.rulers.filter(ruler => ruler.id !== action.payload.id)
 });
 
-export default function rulersReducer (state = initialState, action) {
+/**
+ * Clear all guidelines from state
+ */
+const clearGuideLines = state => Object.assign({}, initialState);
+
+/**
+ * Guidelines Reducer
+ */
+export default function guidelinesReducer (state = initialState, action) {
   switch (action.type) {
-    case CREATE_RULER: return createRuler(state, action);
-    case DELETE_RULER: return deleteRuler(state, action);
-    case DRAG_RULER: return dragRuler(state, action);
+    case CREATE_GUIDELINE: return createGuideLine(state, action);
+    case DELETE_GUIDELINE: return deleteGuideline(state, action);
+    case DRAG_GUIDELINE: return dragGuideLine(state, action);
+    case CLEAR_GUIDELINES: return clearGuideLines(state);
     default: return state;
   }
 };
