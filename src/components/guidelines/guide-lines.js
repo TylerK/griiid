@@ -1,3 +1,4 @@
+import config from 'app/config';
 import { dragGuideLine } from './actions';
 import { GuideLine } from 'components/guidelines';
 import styles from './styles.css';
@@ -24,8 +25,9 @@ export default class GuideLines extends React.Component {
 
     const { id, orientation } = this.state.dragging;
     const location = orientation === 'horizontal' ? event.clientY : event.clientX;
+    const offset = config.guideLines.size;
 
-    this.props.dispatch(dragGuideLine(id, orientation, location - 30));
+    this.props.dispatch(dragGuideLine(id, orientation, location - offset));
   }
 
   _dragEnd = () => {

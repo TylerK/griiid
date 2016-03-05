@@ -43,7 +43,7 @@ const deleteGuideline = (state, action) => Object.assign({}, state, {
 /**
  * Clear all guidelines from state
  */
-const clearGuideLines = state => Object.assign({}, initialState);
+const clearGuideLines = () => Object.assign({}, initialState);
 
 /**
  * Guidelines Reducer
