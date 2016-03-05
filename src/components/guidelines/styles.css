@@ -1,0 +1,50 @@
+@import 'styles/colors.css';
+@import 'styles/config.css';
+
+/**
+ * --------------------------------------------------------
+ * Guide lines
+ * --------------------------------------------------------
+ */
+.guide-lines--layout,
+.guide-lines--stage {
+  width: 100%;
+  height: 100%;
+}
+.guide-lines--stage {
+  position: absolute;
+  top: var(--rulerSize);
+  left: var(--rulerSize);
+}
+.guide-line--horizontal,
+.guide-line--vertical {
+  position: absolute;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    background: var(--grey300);
+  }
+}
+.guide-line--horizontal {
+  height: 3px;
+  width: 100%;
+  cursor: row-resize;
+
+  &:after {
+    width: 100%;
+    height: 1px;
+    top: 1px;
+  }
+}
+.guide-line--vertical {
+  height: 100%;
+  width: 3px;
+  cursor: col-resize;
+
+  &:after {
+    width: 1px;
+    height: 100%;
+    left: 1px;
+  }
+}
