@@ -1,4 +1,4 @@
-import uuid from 'uuid-lib';
+import uuid from 'node-uuid';
 import config from 'app/config';
 import { GuideLine } from 'components/guidelines';
 import styles from './styles.css';
@@ -14,7 +14,7 @@ import {
 export default class GuideLines extends React.Component {
   static propTypes = {
     dispatch: React.PropTypes.func,
-    guideLines: React.PropTypes.array,
+    guidelines: React.PropTypes.array,
     dragging: React.PropTypes.object,
     draggingDirection: React.PropTypes.string
   }
@@ -37,16 +37,16 @@ export default class GuideLines extends React.Component {
   dragDirection = ''
   id = ''
   isDragging = false
-  offset = config.guideLines.size
+  offset = config.rulers.size
 
   /**
    * Resets the above statics
    */
-  _clearLocalDragData = (id) => {
+  _clearLocalDragData = () => {
     this.isDragging = false;
     this.dragDirection = '';
     this.dragId = '';
-    this.props.dispatch(dropGuideLine(id));
+    this.forceUpdate(); // Force a re-render;
   }
 
   /**
@@ -56,9 +56,8 @@ export default class GuideLines extends React.Component {
     event.preventDefault();
     const { dispatch } = this.props;
     const { clientX, clientY } = event;
-    const UUID = uuid.create();
 
-    this.dragId = UUID.value;
+    this.dragId = uuid.v4();
 
     if (clientY <= this.offset) {
       this.dragDirection = 'y';
@@ -92,15 +91,20 @@ export default class GuideLines extends React.Component {
    * Event handler for ending dragging on a new guideline
    */
   _newGuideDragEnd = (event) => {
+    if (!this.isDragging) return;
     event.preventDefault();
-    const { dispatch, guideLines } = this.props;
+    const { dispatch } = this.props;
     const { clientX, clientY } = event;
 
+    const isInRulerBounds = (
+      (clientY <= this.offset && clientX >= this.offset) ||
+      (clientY >= this.offset && clientX <= this.offset)
+    );
+
     // Nuke the guideline if they didn't drag it out of the rulers
-    if (clientY <= this.offset || clientX <= this.offset) {
+    if (isInRulerBounds) {
       dispatch(deleteGuideLine(this.dragId));
-    } else if (this.isDragging) {
-      this._clearLocalDragData(this.dragId);
+      this._clearLocalDragData();
     }
   }
 
@@ -124,10 +128,10 @@ export default class GuideLines extends React.Component {
    * Sub render
    */
   renderRulers() {
-    const { dispatch, guideLines } = this.props;
+    const { dispatch, guidelines } = this.props;
 
-    if (guideLines) {
-      return guideLines.map(ruler => {
+    if (guidelines) {
+      return guidelines.map(ruler => {
         return (
           <GuideLine
             key={ruler.id}
@@ -142,12 +146,11 @@ export default class GuideLines extends React.Component {
   }
 
   render() {
-    const { guideLines } = this.props;
     let iconStyle = {};
 
     // Setting cursor styles on the stage ensures the cursor is
     // always correct while the user is dragging.
-    if (this.dragDirection) {
+    if (this.isDragging) {
       iconStyle = {
         cursor: this.dragDirection === 'y'
         ? 'row-resize'

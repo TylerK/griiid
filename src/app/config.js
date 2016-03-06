@@ -1,5 +1,5 @@
 export default {
-  guideLines: {
+  rulers: {
     size: 30 // 3rem
   }
 };

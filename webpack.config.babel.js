@@ -3,8 +3,9 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config = {
+  cache: true,
   debug: true,
-  devtool: 'eval-source-map',
+  devtool: 'cheap-eval-source-map',
   entry: [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
