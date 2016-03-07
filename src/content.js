@@ -17,13 +17,17 @@ export default class App extends React.Component {
  * Override the default margin and padding on html\body and
  * Wrap the entire side in a container div. Because reasons.
  */
-$('html').addClass('griiid--body-override__a4b553ec');
-$('body').addClass('griiid--body-override__a4b553ec');
-$('body').wrapInner('<div class="griiid--position__00d7c199">');
+$('html').addClass('griiid__body-override');
+$('body').addClass('griiid__body-override');
+
+/**
+ * Attempting to iframe the content
+ */
+
 
 /**
  * Create an element for React to mount into.
  */
-const id = 'griiid__15054632';
-$('body').append(`<div id="${id}"></div>`);
+const id = 'griiid__layout';
+$('body').html('').append(`<div id="${id}"></div>`).append(`<iframe src="${window.location.href}" id="griiid__iframe"></iframe>`);
 ReactDOM.render(<App />, document.getElementById(id));

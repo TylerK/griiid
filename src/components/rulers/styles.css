@@ -26,6 +26,7 @@
   z-index: 1;
   user-select: none;
   cursor: default;
+  pointer-events: all;
 }
 .ruler--dual-axis {
   position: fixed;
