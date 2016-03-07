@@ -1,6 +1,3 @@
-import styles from './styles.css';
-
-@cssModules(styles)
 export default class MarkerBlockPX extends React.Component {
   static propTypes = {
     offset: React.PropTypes.number,
@@ -16,7 +13,7 @@ export default class MarkerBlockPX extends React.Component {
       ? { left: `${i * 10}px` }
       : { top: `${i * 10}px` };
 
-      markers.push(<div key={i} styleName="marker" style={markerStyles} />);
+      markers.push(<div key={i} className="marker" style={markerStyles} />);
     }
 
     const wrapperStyles = orientation === 'horizontal'
@@ -24,8 +21,8 @@ export default class MarkerBlockPX extends React.Component {
     : { height: '100px', top: offset };
 
     return (
-      <div styleName={`markers-block--${orientation}`} style={wrapperStyles}>
-        <div styleName="title">{offset}</div>
+      <div className={`markers-block--${orientation}`} style={wrapperStyles}>
+        <div className="title">{offset}</div>
         <div>
           { markers }
         </div>

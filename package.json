@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --colors --progress",
+    "start": "NODE_ENV=development webpack-dev-server --inline --hot --colors --progress --config webpack.config.dev.babel.js",
+    "build": "rm -rf ./dist && NODE_ENV=production webpack -p --config webpack.config.build.babel.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Kelley <tylerckelley@gmail.com> (http://twitter.com/_tkwd)",
@@ -24,6 +25,7 @@
     "babel-preset-react-hmre": "^1.1.0",
     "babel-preset-stage-0": "^6.3.13",
     "babel-runtime": "^6.5.0",
+    "copy-webpack-plugin": "^1.1.1",
     "css-loader": "^0.21.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^0.1.1",
@@ -31,7 +33,9 @@
     "eslint-plugin-react": "^3.16.1",
     "extract-text-webpack-plugin": "^0.8.2",
     "html-webpack-plugin": "^2.9.0",
+    "jquery": "^2.2.1",
     "lodash": "^4.5.1",
+    "node-uuid": "^1.4.7",
     "postcss": "^5.0.16",
     "postcss-browser-reporter": "^0.4.0",
     "postcss-cssnext": "^2.4.0",
@@ -49,7 +53,6 @@
     "redux": "^3.3.1",
     "reselect": "^2.0.3",
     "style-loader": "^0.13.0",
-    "uuid-lib": "0.0.6",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },

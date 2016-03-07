@@ -1,12 +1,16 @@
-import styles from './styles.css';
+import config from 'app/config';
 
-@cssModules(styles)
 export default class RulersDualAxis extends React.Component {
   shouldComponentUpdate() {
     return false;
   }
 
   render() {
-    return <div styleName="ruler--dual-axis"></div>;
+    const styles = {
+      width: `${config.rulers.size}px`,
+      height: `${config.rulers.size}px`,
+    };
+
+    return <div className="ruler--dual-axis" style={styles}></div>;
   }
 }

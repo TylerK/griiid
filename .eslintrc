@@ -1,9 +1,11 @@
 {
   "globals": {
+    "$": true,
     "_": true,
     "cssModules": true,
     "React": true,
     "ReactDOM": true,
+    "chrome": true
   },
   "extends": "airbnb",
   "rules": {

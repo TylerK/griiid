@@ -1,16 +1,13 @@
 import uuid from 'node-uuid';
 import config from 'app/config';
 import { GuideLine } from 'components/guidelines';
-import styles from './styles.css';
 
 import {
   createGuideLine,
   deleteGuideLine,
   dragGuideLine,
-  dropGuideLine
 } from './actions';
 
-@cssModules(styles)
 export default class GuideLines extends React.Component {
   static propTypes = {
     dispatch: React.PropTypes.func,
@@ -46,7 +43,7 @@ export default class GuideLines extends React.Component {
     this.isDragging = false;
     this.dragDirection = '';
     this.dragId = '';
-    this.forceUpdate(); // Force a re-render;
+    this.forceUpdate();
   }
 
   /**
@@ -104,8 +101,9 @@ export default class GuideLines extends React.Component {
     // Nuke the guideline if they didn't drag it out of the rulers
     if (isInRulerBounds) {
       dispatch(deleteGuideLine(this.dragId));
-      this._clearLocalDragData();
     }
+
+    this._clearLocalDragData();
   }
 
   /**
@@ -159,7 +157,7 @@ export default class GuideLines extends React.Component {
     }
 
     return (
-      <div styleName="guide-lines--stage" style={iconStyle}>
+      <div className="guide-lines--stage" style={iconStyle}>
         { this.renderRulers() }
       </div>
     );

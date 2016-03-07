@@ -55,7 +55,7 @@ export default function guidelinesReducer (state = initialState, action) {
   switch (action.type) {
     case CLEAR_GUIDELINES: return clearGuideLines(state);
     case CREATE_GUIDELINE: return createGuideLine(state, action);
-    case DELETE_GUIDELINE: console.log(deleteGuideline(state, action)); return deleteGuideline(state, action);
+    case DELETE_GUIDELINE: return deleteGuideline(state, action);
     case DRAG_GUIDELINE: return dragGuideLine(state, action);
     default: return state;
   }

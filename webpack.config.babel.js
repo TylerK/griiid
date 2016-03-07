@@ -1,19 +1,10 @@
 import webpack from 'webpack';
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config = {
-  cache: true,
-  debug: true,
-  devtool: 'cheap-eval-source-map',
-  entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
-    './src/index.js'
-  ],
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -24,20 +15,16 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:8]!postcss-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'griiid',
-      template: path.resolve(__dirname, './src/views/index.html'),
-      inject: false
-    }),
     new webpack.NoErrorsPlugin(),
     new webpack.ProvidePlugin({
       'React': 'react',
       '_': 'lodash',
+      '$': 'jquery',
       'ReactDOM': 'react-dom',
       'cssModules': 'react-css-modules'
     })

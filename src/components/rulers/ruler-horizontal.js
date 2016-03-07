@@ -1,7 +1,6 @@
+import config from 'app/config';
 import { MarkerBlockPX } from 'components/rulers';
-import styles from './styles.css';
 
-@cssModules(styles)
 export default class RulersHorizontal extends React.Component {
   state = {
     width: 0
@@ -45,7 +44,7 @@ export default class RulersHorizontal extends React.Component {
 
   render() {
     return (
-      <div styleName="ruler--horizontal">
+      <div className="ruler--horizontal" style={{ height: `${config.rulers.size}px` }}>
         { this.renderMarkers() }
       </div>
     );

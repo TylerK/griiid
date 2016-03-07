@@ -1,11 +1,7 @@
-import {
-  GuideLines
-} from 'components/guidelines';
+import { GuideLines } from 'components/guidelines';
+import './styles.css';
 
-import styles from './styles.css';
-
-@cssModules(styles)
-export default class RulersWrapper extends React.Component {
+export default class GuideLinesWrapper extends React.Component {
   render() {
     return (
       <GuideLines {...this.props} />
