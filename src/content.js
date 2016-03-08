@@ -21,13 +21,12 @@ $('html').addClass('griiid__body-override');
 $('body').addClass('griiid__body-override');
 
 /**
- * Attempting to iframe the content
- */
-
-
-/**
  * Create an element for React to mount into.
  */
-const id = 'griiid__layout';
-$('body').html('').append(`<div id="${id}"></div>`).append(`<iframe src="${window.location.href}" id="griiid__iframe"></iframe>`);
+const id = 'griiid__root';
+
+$('body')
+.wrapInner('<div class="griiid__wrapper">')
+.append(`<div id="${id}"></div>`);
+
 ReactDOM.render(<App />, document.getElementById(id));

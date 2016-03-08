@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "griiid",
-  "description": "Helpful tools for layout",
+  "description": "Helpful layout tools for designers and developers",
   "version": "1.0",
   "icons": {
     "32": "assets/icons/32.png",

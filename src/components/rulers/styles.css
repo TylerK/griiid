@@ -7,9 +7,11 @@
  * --------------------------------------------------------
  */
 .rulers-layout {
-  position: fixed;
   width: 100%;
+  min-height: 100%;
+  height: auto !important;
   height: 100%;
+  position: fixed;
   pointer-events: none;
 }
 
@@ -26,7 +28,6 @@
   z-index: 1;
   user-select: none;
   cursor: default;
-  pointer-events: all;
 }
 .ruler--dual-axis {
   position: fixed;

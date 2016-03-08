@@ -144,20 +144,23 @@ export default class GuideLines extends React.Component {
   }
 
   render() {
-    let iconStyle = {};
+    let styles = {
+      height: `${this.props.height}px`
+    };
 
     // Setting cursor styles on the stage ensures the cursor is
     // always correct while the user is dragging.
     if (this.isDragging) {
-      iconStyle = {
+      styles = Object.assign({}, styles, {
         cursor: this.dragDirection === 'y'
         ? 'row-resize'
-        : 'col-resize'
-      };
+        : 'col-resize',
+        pointerEvents: 'all'
+      });
     }
 
     return (
-      <div className="guide-lines--stage" style={iconStyle}>
+      <div className="guide-lines--stage" style={styles}>
         { this.renderRulers() }
       </div>
     );
