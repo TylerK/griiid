@@ -23,7 +23,6 @@
 .ruler--dual-axis,
 .ruler--horizontal,
 .ruler--vertical {
-  position: fixed;
   background: #fff;
   z-index: 1;
   user-select: none;
@@ -42,6 +41,7 @@
   border-bottom: 1px solid var(--grey100);
 }
 .ruler--vertical {
+  position: absolute;
   height: 100%;
   top: var(--rulerSize);
   border-right: 1px solid var(--grey100);
