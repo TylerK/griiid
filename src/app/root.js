@@ -36,6 +36,8 @@ export default class Root extends React.Component {
       width: `${width}px`
     };
 
+    console.log(document.body.scrollHeight);
+
     return (
       <div style={styles} className="griiid__layout">
         <GuideLinesContainer {...this.state} height={height} />

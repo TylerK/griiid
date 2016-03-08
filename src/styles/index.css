@@ -15,6 +15,7 @@
 .griiid__wrapper {
   transform: translate3d(var(--rulerSize), var(--rulerSize), 0);
   width: calc(100% - var(--rulerSize));
+  height: 100%;
 }
 #griiid__root {
   width: 100%;
