@@ -16,6 +16,7 @@ griiid is an effort to bring familiar design layout tools to Chrome.
 * [ ] Framework aware responsive grid generation (Bootstrap, Foundation, etc)
 * [ ] Configurable color and grid settings
 * [ ] Smart guide snapping
+* [ ] Remembering generated grids on a per-site or per-project basis.
 
 ### How to install this extension in Chrome (Dev Mode)
 
