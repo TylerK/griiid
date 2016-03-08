@@ -2,6 +2,13 @@ import config from 'app/config';
 import { MarkerBlockPX } from 'components/rulers';
 
 export default class RulersHorizontal extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return (
+      this.props.width !== nextProps.width ||
+      this.props.scrollX !== nextProps.scrollX
+    );
+  }
+
   renderMarkers() {
     const { width } = this.props;
     const markerBlockWidth = 100;

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --inline --hot --colors --progress --config webpack.config.dev.babel.js",
-    "build": "rm -rf ./dist && NODE_ENV=production webpack -p --progress --colors --config webpack.config.build.babel.js",
+    "build": "rm -rf ./dist && NODE_ENV=production webpack --progress --colors --config webpack.config.build.babel.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tyler Kelley <tylerckelley@gmail.com> (http://twitter.com/_tkwd)",

@@ -2,6 +2,13 @@ import config from 'app/config';
 import { MarkerBlockPX } from 'components/rulers';
 
 export default class RulersVertical extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    return (
+      this.props.height !== nextProps.height ||
+      this.props.scrollY !== nextProps.scrollY
+    );
+  }
+
   renderMarkers() {
     const { height } = this.props;
     const markerBlockHeight = 100;

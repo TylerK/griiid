@@ -4,6 +4,10 @@ export default class MarkerBlockPX extends React.Component {
     orientation: React.PropTypes.string
   }
 
+  shouldComponentupdate() {
+    return false;
+  }
+
   render() {
     const { offset, orientation } = this.props;
     const markers = [];

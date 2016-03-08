@@ -22,6 +22,10 @@ export default class GuideLines extends React.Component {
     document.addEventListener('mouseup', this._newGuideDragEnd);
   }
 
+  shouldComponentUpdate(nextProps) {
+    return this.props.dragging === nextProps.dragging;
+  }
+
   componentWillUnMount () {
     document.removeEventListener('mousedown', this._newGuideDragStart);
     document.removeEventListener('mousemove', this._guideDrag);
