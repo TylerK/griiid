@@ -3,7 +3,11 @@ import Root from 'app/root';
 import Store from 'app/store';
 import './styles/index.css';
 
-export default class App extends React.Component {
+window.addEventListener('message', event => {
+  console.log(event);
+}, false);
+
+class App extends React.Component {
   render() {
     return (
       <Provider store={Store}>
