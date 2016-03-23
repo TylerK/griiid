@@ -9,8 +9,10 @@ griiid is an effort to bring familiar design layout tools to Chrome.
 * [x] Draggable guidelines
 * [x] Rulers and guides tied to scrolling
 
-### Future
+### Future (in no particular order)
+* [ ] Toolbar to power this whole thing
 * [ ] Configurable measurements (rem, px, etc)
+* [ ] Configurable keyboard shortcuts 
 * [ ] Layout grid generation
 * [ ] Baseline grid generation
 * [ ] Framework aware responsive grid generation (Bootstrap, Foundation, etc)
