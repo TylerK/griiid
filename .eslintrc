@@ -9,11 +9,12 @@
   },
   "extends": "airbnb",
   "rules": {
-    "comma-dangle": [1, "never"],
+    "comma-dangle": [1, "always-multiline"],
     "key-spacing": [0, {
       "beforeColon": true,
       "afterColon": true
     }],
+    "indent": [2, 2, {"SwitchCase": 1}],
     "no-else-return": 0,
     "space-before-function-paren": [0, "always"],
     "react/jsx-quotes": [1, "double"]

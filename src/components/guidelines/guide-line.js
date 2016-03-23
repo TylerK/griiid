@@ -2,7 +2,7 @@ export default class GuideLine extends React.Component {
   static propTypes = {
     onMouseDown: React.PropTypes.func,
     onMouseUp: React.PropTypes.func,
-    ruler: React.PropTypes.object
+    ruler: React.PropTypes.object,
   }
 
   shouldComponentUpdate(nextProps) {

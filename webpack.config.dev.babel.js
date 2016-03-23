@@ -1,5 +1,3 @@
-import path from 'path';
-import webpack from 'webpack';
 import config from './webpack.config.babel';
 
 const DevConfig = Object.assign({}, config, {
@@ -10,7 +8,7 @@ const DevConfig = Object.assign({}, config, {
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
     './src/content.js'
-  ],
+  ]
 });
 
 export default DevConfig;

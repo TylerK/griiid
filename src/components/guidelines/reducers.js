@@ -3,7 +3,6 @@ import {
   CREATE_GUIDELINE,
   DELETE_GUIDELINE,
   DRAG_GUIDELINE,
-  DROP_GUIDELINE
 } from './actions';
 
 const initialState = {
@@ -32,7 +31,7 @@ const createGuideLine = (state, action) => Object.assign({}, state, {
   guidelines: state.guidelines.concat({
     id: action.payload.id,
     location: action.payload.location,
-    orientation: action.payload.orientation
+    orientation: action.payload.orientation,
   })
 });
 

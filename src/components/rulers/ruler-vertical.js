@@ -2,6 +2,11 @@ import config from 'app/config';
 import { MarkerBlockPX } from 'components/rulers';
 
 export default class RulersVertical extends React.Component {
+  static propTypes = {
+    height: React.PropTypes.number,
+    scrollY: React.PropTypes.number,
+  }
+
   shouldComponentUpdate(nextProps) {
     return (
       this.props.height !== nextProps.height ||
@@ -30,7 +35,7 @@ export default class RulersVertical extends React.Component {
     const style = {
       width: `${size}px`,
       height: `${height}px`,
-      top: `${(scrollY * -1) + size}px`
+      top: `${(scrollY * -1) + size}px`,
     };
 
     return (

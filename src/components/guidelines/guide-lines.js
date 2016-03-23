@@ -11,9 +11,10 @@ import {
 export default class GuideLines extends React.Component {
   static propTypes = {
     dispatch: React.PropTypes.func,
+    height: React.PropTypes.number,
     guidelines: React.PropTypes.array,
     dragging: React.PropTypes.object,
-    draggingDirection: React.PropTypes.string
+    draggingDirection: React.PropTypes.string,
   }
 
   componentDidMount () {
@@ -148,9 +149,7 @@ export default class GuideLines extends React.Component {
   }
 
   render() {
-    let styles = {
-      height: `${this.props.height}px`
-    };
+    let styles = { height: `${this.props.height}px` };
 
     // Setting cursor styles on the stage ensures the cursor is
     // always correct while the user is dragging.
@@ -159,7 +158,7 @@ export default class GuideLines extends React.Component {
         cursor: this.dragDirection === 'y'
         ? 'row-resize'
         : 'col-resize',
-        pointerEvents: 'all'
+        pointerEvents: 'all',
       });
     }
 

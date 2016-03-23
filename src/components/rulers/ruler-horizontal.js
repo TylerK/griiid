@@ -2,6 +2,11 @@ import config from 'app/config';
 import { MarkerBlockPX } from 'components/rulers';
 
 export default class RulersHorizontal extends React.Component {
+  static propTypes = {
+    width: React.PropTypes.number,
+    scrollX: React.PropTypes.number,
+  }
+
   shouldComponentUpdate(nextProps) {
     return (
       this.props.width !== nextProps.width ||
@@ -30,7 +35,7 @@ export default class RulersHorizontal extends React.Component {
     const style = {
       height: `${size}px`,
       width: `${width}px`,
-      left: `${(scrollX * -1) + size}px`
+      left: `${(scrollX * -1) + size}px`,
     };
 
     return (

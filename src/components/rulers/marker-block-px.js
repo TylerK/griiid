@@ -1,7 +1,7 @@
 export default class MarkerBlockPX extends React.Component {
   static propTypes = {
     offset: React.PropTypes.number,
-    orientation: React.PropTypes.string
+    orientation: React.PropTypes.string,
   }
 
   shouldComponentupdate() {
