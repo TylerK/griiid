@@ -31,11 +31,12 @@ export default class RulersHorizontal extends React.Component {
   render() {
     const { scrollX, width } = this.props;
     const size = config.rulers.size;
+    const offset = size + config.toolbar.width;
 
     const style = {
       height: `${size}px`,
       width: `${width}px`,
-      left: `${(scrollX * -1) + size}px`,
+      left: `${(scrollX * -1) + offset}px`,
     };
 
     return (

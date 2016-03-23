@@ -58,17 +58,20 @@ export default class GuideLines extends React.Component {
     event.preventDefault();
     const { dispatch } = this.props;
     const { clientX, clientY } = event;
+    const { width } = config.toolbar;
 
     this.dragId = uuid.v4();
 
-    if (clientY <= this.offset) {
+    if (clientY <= this.offset && clientX >= this.offset + width) {
       this.dragDirection = 'y';
       this.isDragging = true;
-      dispatch(createGuideLine('horizontal', 0, this.dragId));
-    } else if (clientX <= this.offset) {
+      dispatch(createGuideLine('horizontal', -1, this.dragId));
+    }
+
+    else if (clientX >= width && clientX <= width + this.offset && clientY >= this.offset) {
       this.dragDirection = 'x';
       this.isDragging = true;
-      dispatch(createGuideLine('vertical', 0, this.dragId));
+      dispatch(createGuideLine('vertical', -1, this.dragId));
     }
   }
 
@@ -77,15 +80,16 @@ export default class GuideLines extends React.Component {
    */
   _guideDrag = (event) => {
     if (!this.isDragging) return;
-
     event.preventDefault();
+
     const { clientX, clientY } = event;
     const { dispatch } = this.props;
+    const { width } = config.toolbar;
 
     if (this.dragDirection === 'y') {
       dispatch(dragGuideLine(this.dragId, clientY));
     } else {
-      dispatch(dragGuideLine(this.dragId, clientX));
+      dispatch(dragGuideLine(this.dragId, clientX - width));
     }
   }
 
@@ -95,12 +99,14 @@ export default class GuideLines extends React.Component {
   _newGuideDragEnd = (event) => {
     if (!this.isDragging) return;
     event.preventDefault();
+
     const { dispatch } = this.props;
     const { clientX, clientY } = event;
+    const { width } = config.toolbar;
 
     const isInRulerBounds = (
-      (clientY <= this.offset && clientX >= this.offset) ||
-      (clientY >= this.offset && clientX <= this.offset)
+      (clientY <= this.offset && clientX >= this.offset + width) ||
+      (clientY >= this.offset && clientX <= this.offset + width)
     );
 
     // Nuke the guideline if they didn't drag it out of the rulers

@@ -1,0 +1,13 @@
+@import 'styles/colors.css';
+@import 'styles/config.css';
+
+/**
+ * --------------------------------------------------------
+ * Tool bar setup
+ * --------------------------------------------------------
+ */
+.tool-bar {
+  width: var(--toolBarWidth);
+  background: grey;
+  height: 100%;
+}

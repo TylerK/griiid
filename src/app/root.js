@@ -1,12 +1,13 @@
 import { Wrapper as RulersWrapper } from 'components/rulers';
 import { container as GuideLinesContainer } from 'components/guidelines';
+import { container as ToolBarContainer } from 'components/toolbar';
 
 export default class Root extends React.Component {
   state = {
     width: document.body.scrollWidth,
     height: document.body.scrollHeight,
     scrollY: 0,
-    scrollX: 0
+    scrollX: 0,
   }
 
   componentDidMount() {
@@ -24,7 +25,7 @@ export default class Root extends React.Component {
       width: document.body.scrollWidth,
       height: document.body.scrollHeight,
       scrollY: window.scrollY,
-      scrollX: window.scrollX
+      scrollX: window.scrollX,
     });
   }
 
@@ -33,13 +34,14 @@ export default class Root extends React.Component {
 
     const styles = {
       height: `${height}px`,
-      width: `${width}px`
+      width: `${width}px`,
     };
 
     return (
       <div style={styles} className="griiid__layout">
         <GuideLinesContainer {...this.state} />
         <RulersWrapper {...this.state} />
+        <ToolBarContainer />
       </div>
     );
   }

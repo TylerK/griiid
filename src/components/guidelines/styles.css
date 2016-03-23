@@ -9,11 +9,13 @@
 .guide-lines--layout,
 .guide-lines--stage {
   position: absolute;
-  width: 100%;
+  left: var(--toolBarWidth);
+  width: calc(100% - var(--toolBarWidth));
   min-height: 100%;
   height: auto !important;
   height: 100%;
   pointer-events: none;
+  overflow: hidden;
 }
 .guide-line--horizontal,
 .guide-line--vertical {

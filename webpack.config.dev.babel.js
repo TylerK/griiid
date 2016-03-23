@@ -7,7 +7,7 @@ const DevConfig = Object.assign({}, config, {
   entry: [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
-    './src/content.js'
+    './src/content.js',
   ]
 });
 

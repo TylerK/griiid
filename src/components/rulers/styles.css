@@ -12,6 +12,7 @@
   height: auto !important;
   height: 100%;
   position: fixed;
+  left: var(--toolBarWidth);
   pointer-events: none;
 }
 
@@ -37,7 +38,6 @@
 .ruler--horizontal {
   position: fixed;
   width: 100%;
-  left: var(--rulerSize);
   border-bottom: 1px solid var(--grey100);
 }
 .ruler--vertical {
