@@ -3,6 +3,6 @@ export default {
     size: 30
   },
   toolbar: {
-    width: 200
+    width: 60
   }
 };

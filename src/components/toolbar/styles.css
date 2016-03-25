@@ -9,6 +9,25 @@
 .tool-bar {
   position: fixed;
   width: var(--toolBarWidth);
-  background: grey;
+  background: var(--grey500);
   height: 100%;
+  pointer-events: all;
+}
+.tool-bar .logo {
+  background: var(--grey700);
+  height: var(--rulerSize);
+  color: var(--offWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tool-bar .icons {
+  display: flex;
+  height: 100%;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tool-bar .icons > div {
+  margin-top: 0.5rem;
 }

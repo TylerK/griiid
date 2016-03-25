@@ -1,0 +1,28 @@
+@import 'styles/colors.css';
+
+.button,
+.button > a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+.button > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 50ms ease-out;
+}
+.button.dark a {
+  background: var(--grey500);
+  color: var(--offWhite);
+}
+.button.dark a:hover {
+  background: var(--grey700);
+  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
+}
+.button.light a {
+  background: var(--grey100);
+  color: var(--grey900);
+}
