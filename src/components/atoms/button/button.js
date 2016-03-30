@@ -1,5 +1,11 @@
 import './styles.css';
 
+/**
+ * Basic button
+ * @usage <Button type="dark">[...]</Button>
+ * @param  {object} props
+ * @returns {element}
+ */
 const Button = props => (
   <div className={`button ${props.type}`}>
     <a href="#" onClick={props.onClick}>
