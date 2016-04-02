@@ -16,6 +16,10 @@ const config = {
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader!postcss-loader'
+      },
+      {
+        test: /\.png|gif|jpg|jpeg|svg$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   },
@@ -43,7 +47,7 @@ const config = {
   },
   resolve: {
     modulesDirectories: ['node_modules', './src'],
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.css']
   }
 };
 

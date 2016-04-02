@@ -12,15 +12,17 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: all 100ms ease-out;
+  transition: all 70ms ease-out;
+  padding: 5px;
 }
 .button.dark a {
   background: var(--grey500);
+  border: 1px solid var(--grey500);
   color: var(--offWhite);
 }
 .button.dark a:hover {
   background: var(--grey700);
-  box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--grey900);
 }
 .button.light a {
   background: var(--grey100);

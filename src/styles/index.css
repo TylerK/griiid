@@ -2,6 +2,12 @@
 @import './config.css';
 @import './typography.css';
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
 .griiid__body-override {
   height: 100%;
   width: 100%;

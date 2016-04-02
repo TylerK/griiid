@@ -15,7 +15,7 @@ const Button = props => (
 );
 
 Button.propTypes = {
-  children: React.PropTypes.string.isRequired,
+  children: React.PropTypes.node.isRequired,
   type: React.PropTypes.oneOf([ 'dark', 'light' ]).isRequired,
   onClick: React.PropTypes.func.isRequired
 };
