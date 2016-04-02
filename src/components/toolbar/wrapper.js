@@ -1,10 +1,11 @@
 import { Button, Block, Icon } from 'components/atoms';
 
 import './styles.css';
-import ToggleElementSelect from 'assets/icons/toggle_element_select.svg';
-import ToggleGrid from 'assets/icons/toggle_grid.svg';
 import ToggleBaseline from 'assets/icons/toggle_baseline.svg';
 import ToggleConfig from 'assets/icons/toggle_config.svg';
+import ToggleElementSelect from 'assets/icons/toggle_element_select.svg';
+import ToggleGrid from 'assets/icons/toggle_grid.svg';
+import ToggleZoom from 'assets/icons/toggle_zoom.svg';
 
 export default class ToolBarWrapper extends React.Component {
   handleClick = (event) => {
@@ -38,6 +39,13 @@ export default class ToolBarWrapper extends React.Component {
             <Button type="dark" onClick={this.handleClick}>
               <Icon>
                 <img src={ToggleBaseline} />
+              </Icon>
+            </Button>
+          </Block>
+          <Block height={iconSize} width={iconSize}>
+            <Button type="dark" onClick={this.handleClick}>
+              <Icon>
+                <img src={ToggleZoom} />
               </Icon>
             </Button>
           </Block>
