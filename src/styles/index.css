@@ -1,5 +1,12 @@
 @import './colors.css';
 @import './config.css';
+@import './typography.css';
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
 
 .griiid__body-override {
   height: 100%;
@@ -19,6 +26,7 @@
 }
 #griiid__root {
   width: 100%;
+  min-height: 100%;
   z-index: 9999;
   box-sizing: border-box;
   font-size: 10px;

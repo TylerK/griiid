@@ -1,4 +1,4 @@
 :root {
-  --rulerSize: 30px;
-  --toolBarWidth: 200px;
+  --rulerSize: 25px; /* This must also be changed in app/config.js */
+  --toolBarWidth: 60px;
 }

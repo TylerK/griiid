@@ -1,6 +1,24 @@
 :root {
+  /* Accent colors */
+  --amber: #fec108;
+  --aqua: #08dfee;
+  --blue: #25c8ee;
+  --brown: #785447;
+  --cyan: #00c2f1;
+  --indigo: #416fb2;
+  --lime: #d1e323;
+  --offWhite: #fbfbfb;
+  --orange: #f8830e;
+  --pink: #e42395;
+  --purple: #7728ac;
+  --red: #ee1c42;
+  --teal: #03b2a3;
+  --yellow: #feeb3a;
+
+  /* Greys by shade */
   --grey100: #e2ded7;
-  --grey300: #00deff;
+  --grey300: #7f7a75;
   --grey500: #474441;
   --grey700: #312f2b;
+  --grey900: #151412;
 }

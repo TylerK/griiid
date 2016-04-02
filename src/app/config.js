@@ -1,8 +1,8 @@
 export default {
   rulers: {
-    size: 30
+    size: 25 // This must also be changed in styles/config.css
   },
   toolbar: {
-    width: 200
+    width: 60
   }
 };
