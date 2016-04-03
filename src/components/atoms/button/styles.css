@@ -7,6 +7,7 @@
   height: 100%;
   border-radius: 3px;
 }
+
 .button > a {
   display: flex;
   justify-content: center;
@@ -15,16 +16,30 @@
   transition: all 70ms ease-out;
   padding: 5px;
 }
+
 .button.dark a {
   background: var(--grey500);
-  border: 1px solid var(--grey500);
   color: var(--offWhite);
 }
+
 .button.dark a:hover {
   background: var(--grey700);
-  border: 1px solid var(--grey900);
 }
+
 .button.light a {
   background: var(--grey100);
   color: var(--grey900);
+}
+
+/*
+ * Selected button states
+ */
+.button.light.is-selected a,
+.button.dark.is-selected a {
+  background: var(--darkBlue);
+}
+
+.button.light.is-selected a:hover,
+.button.dark.is-selected a:hover {
+  background: var(--darkBlue);
 }

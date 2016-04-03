@@ -7,13 +7,15 @@ import {
 
 import { reducer as GuideLinesReducer } from 'components/guidelines';
 import { reducer as ToolBarReducer } from 'components/toolbar';
+import { reducer as PaletteReducer } from 'components/palettes';
 
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 const reducers = combineReducers({
   guideLines: GuideLinesReducer,
-  toolbar: ToolBarReducer,
+  toolBar: ToolBarReducer,
+  palette: PaletteReducer
 });
 
 const logger = createLogger({
