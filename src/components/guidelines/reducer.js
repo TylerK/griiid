@@ -1,9 +1,4 @@
-import {
-  CLEAR_GUIDELINES,
-  CREATE_GUIDELINE,
-  DELETE_GUIDELINE,
-  DRAG_GUIDELINE,
-} from './actions';
+import * as ACTIONS from './constants';
 
 const initialState = {
   guidelines: []
@@ -52,10 +47,10 @@ const clearGuideLines = () => Object.assign({}, initialState);
  */
 export default function guidelinesReducer (state = initialState, action) {
   switch (action.type) {
-    case CLEAR_GUIDELINES: return clearGuideLines(state);
-    case CREATE_GUIDELINE: return createGuideLine(state, action);
-    case DELETE_GUIDELINE: return deleteGuideline(state, action);
-    case DRAG_GUIDELINE: return dragGuideLine(state, action);
+    case ACTIONS.CLEAR_GUIDELINES: return clearGuideLines(state);
+    case ACTIONS.CREATE_GUIDELINE: return createGuideLine(state, action);
+    case ACTIONS.DELETE_GUIDELINE: return deleteGuideline(state, action);
+    case ACTIONS.DRAG_GUIDELINE: return dragGuideLine(state, action);
     default: return state;
   }
 }

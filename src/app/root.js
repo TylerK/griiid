@@ -1,6 +1,7 @@
 import { Wrapper as RulersWrapper } from 'components/rulers';
 import { container as GuideLinesContainer } from 'components/guidelines';
 import { container as ToolBarContainer } from 'components/toolbar';
+import { container as PalettesContainer } from 'components/palettes';
 
 export default class Root extends React.Component {
   state = {
@@ -42,6 +43,7 @@ export default class Root extends React.Component {
         <GuideLinesContainer {...this.state} />
         <RulersWrapper {...this.state} />
         <ToolBarContainer />
+        <PalettesContainer />
       </div>
     );
   }

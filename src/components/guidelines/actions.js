@@ -1,8 +1,4 @@
-export const CLEAR_GUIDELINES = 'CLEAR_GUIDELINES';
-export const CREATE_GUIDELINE = 'CREATE_GUIDELINE';
-export const DELETE_GUIDELINE = 'DELETE_GUIDELINE';
-export const DRAG_GUIDELINE = 'DRAG_GUIDELINE';
-export const DROP_GUIDELINE = 'DROP_GUIDELINE';
+import * as ACTIONS from './constants';
 
 /**
  * Drag an existing guide line
@@ -13,7 +9,7 @@ export const DROP_GUIDELINE = 'DROP_GUIDELINE';
  */
 export const dragGuideLine = (id, location) => {
   return {
-    type: DRAG_GUIDELINE,
+    type: ACTIONS.DRAG_GUIDELINE,
     payload: {
       id,
       location: (location - 1) // Account for lines actually being 3 pixels in thickness
@@ -23,7 +19,7 @@ export const dragGuideLine = (id, location) => {
 
 export const dropGuideLine = (id) => {
   return {
-    type: DROP_GUIDELINE,
+    type: ACTIONS.DROP_GUIDELINE,
     payload: {
       id
     }
@@ -39,7 +35,7 @@ export const dropGuideLine = (id) => {
  */
 export const createGuideLine = (orientation, location, id) => {
   return {
-    type: CREATE_GUIDELINE,
+    type: ACTIONS.CREATE_GUIDELINE,
     payload: {
       id,
       orientation,
@@ -55,7 +51,7 @@ export const createGuideLine = (orientation, location, id) => {
  */
 export const deleteGuideLine = (id) => {
   return {
-    type: DELETE_GUIDELINE,
+    type: ACTIONS.DELETE_GUIDELINE,
     payload: {
       id
     }
@@ -68,6 +64,6 @@ export const deleteGuideLine = (id) => {
  */
 export const clearGuideLines = () => {
   return {
-    type: CLEAR_GUIDELINES
+    type: ACTIONS.CLEAR_GUIDELINES
   };
 };
