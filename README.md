@@ -2,23 +2,25 @@
 
 
 # What is this?
-griiid is an effort to bring familiar design layout tools to Chrome. 
+griiid is an effort to bring familiar design layout tools, like those found in Adobe products, Sketch, and others to web designers and developers via a Chrome extension. 
 
 ### Done
 * [x] Rulers
 * [x] Draggable guidelines
 * [x] Rulers and guides tied to scrolling
+* [x] Toolbar hooked up 
 
 ### Future (in no particular order)
-* [ ] Toolbar to power this whole thing
+* [ ] Layout grid generation palette
+* [ ] Baseline grid generation palette
+* [ ] Element selector
+* [ ] Zoom functionality
 * [ ] Configurable measurements (rem, px, etc)
+* [ ] Remembering generated grids on a per-site or per-project basis.
 * [ ] Configurable keyboard shortcuts 
-* [ ] Layout grid generation
-* [ ] Baseline grid generation
+* [ ] Smart guide snapping
 * [ ] Framework aware responsive grid generation (Bootstrap, Foundation, etc)
 * [ ] Configurable color and grid settings
-* [ ] Smart guide snapping
-* [ ] Remembering generated grids on a per-site or per-project basis.
 
 ### How to install this extension in Chrome (Dev Mode)
 
