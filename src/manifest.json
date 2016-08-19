@@ -4,17 +4,17 @@
   "description": "Helpful layout tools for designers and developers",
   "version": "1.0",
   "icons": {
-    "32": "assets/icons/32.png",
-    "48": "assets/icons/48.png",
-    "64": "assets/icons/64.png",
-    "128": "assets/icons/128.png"
+    "32": "assets/logo/icon32.png",
+    "48": "assets/logo/icon48.png",
+    "64": "assets/logo/icon64.png",
+    "128": "assets/logo/icon128.png"
   },
   "background": {
     "persistent": true,
     "scripts": ["background.js"]
   },
   "browser_action": {
-    "default_icon": "assets/icons/48.png"
+    "default_icon": "assets/logo/icon48.png"
   },
   "permissions": [
     "background",
